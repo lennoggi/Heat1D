@@ -21,7 +21,7 @@ int main() {
          << "Initial sigma:  " << SIGMA << endl
          << endl;
     #else
-    #error "Invalid wave function"
+    #error "Invalid initial data"
     #endif
 
 
@@ -35,7 +35,7 @@ int main() {
         #if (INITIAL_DATA == GAUSSIAN)
         u[i] = gaussian(x[i]);
         #else
-        #error "Invalid wave function"
+        #error "Invalid initial data"
         #endif
     }
 
