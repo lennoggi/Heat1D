@@ -72,8 +72,8 @@ int main() {
     assert(H5Dclose(x_dset_id) >= 0);
 
 
-    // ***** Function *****
-    const auto u_group_id = H5Gcreate(file_id, "Function",
+    // ***** Solution *****
+    const auto u_group_id = H5Gcreate(file_id, "Solution",
                                       H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
     assert(u_group_id >= 0); 
 
@@ -94,8 +94,8 @@ int main() {
 
     constexpr double r           = ALPHA*DT/(dx*dx);
     constexpr double one_plus_2r = 1. + 2.*r;
-    constexpr double r_f0        = r*F0;
-    constexpr double r_fL        = r*FL;
+    constexpr double r_u0        = r*U0;
+    constexpr double r_uL        = r*UL;
 
     constexpr hsize_t tdims = NT/OUT_EVERY;  // NOTE: integer division
     array<double, tdims> time;
@@ -104,8 +104,8 @@ int main() {
     for (auto n = decltype(NT){1}; n < NT; ++n) {
         diag[0]     = one_plus_2r;
          rhs        = u;
-         rhs[0]    += r_f0;
-         rhs[nxm1] += r_fL;
+         rhs[0]    += r_u0;
+         rhs[nxm1] += r_uL;
 
         /* Thomas' tridiagonal algorithm to solve the linear system
          *   / b[0] c[0]  0    0   ... \ / u[0] \   / d[0] \

@@ -14,8 +14,8 @@
 constexpr inline double ALPHA = 1.;
 
 // Left and right time-independent function values (Dirichlet BCs)
-constexpr inline double F0 = 3.;
-constexpr inline double FL = 8.;
+constexpr inline double U0 = 8.;
+constexpr inline double UL = 3.;
 
 
 // Number of spatial grid points
