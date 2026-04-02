@@ -11,25 +11,25 @@
 
 
 // Diffusion constant
-constexpr inline double ALPHA = 1.;
+constexpr inline double ALPHA = 1.0;
 
 // Left and right time-independent function values (Dirichlet BCs)
-constexpr inline double U0 = 8.;
-constexpr inline double UL = 3.;
+constexpr inline double U0 = 8.0;
+constexpr inline double UL = 3.0;
 
 
 // Number of spatial grid points
 constexpr inline size_t NX = 1000;
 
 // Spatial bounds are [0, L - L/N]
-constexpr inline double L = 1.;
+constexpr inline double L = 1.0;
 
 
 // Number of time steps
 constexpr inline size_t NT = 200;
 
 // Time step
-constexpr inline double DT = 1.e-04;
+constexpr inline double DT = 1.0e-04;
 
 
 // Initial function center
