@@ -1,8 +1,21 @@
 # Heat1D
-A code solving the 1D heat equation with Dirichlet boundary conditions by implicit time integration (backward Euler)
+A code solving the 1D heat equation
+$$
+\begin{equation*}
+    \frac{\partial u}{\partial t}\left(t, x\right) = \alpha\frac{\partial u}{\partial x^2}\left(t, x\right)\;,
+\end{equation*}
+$$
+where $\alpha > 0$, with Dirichlet boundary conditions
+$$
+\begin{align*}
+    u\left(t, 0\right) &= u_0\\
+    u\left(t, L\right) &= u_L
+\end{align*}
+$$
+by implicit time integration (backward Euler).
 
 ## Minimal requirements
-- A C++ compiler supporting the `C++17` standard
+- A C++ compiler supporting the `c++17` standard
 - `cmake`
 - The HDF5 library
 - `python3` with `numpy`, `matplotlib`, and `h5py` to generate evolution snapshots
