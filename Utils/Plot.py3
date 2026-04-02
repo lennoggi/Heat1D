@@ -35,7 +35,7 @@ with h5py.File(filename, "r") as f:
 
     for n in range(NT):
         it = n*out_every
-        u  = f[f"Function/Iteration {it}"][()]
+        u  = f[f"Solution/Iteration {it}"][()]
 
         fig = plt.figure(figsize = figsize, dpi = dpi)
         ax  = fig.gca()

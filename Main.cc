@@ -1,5 +1,5 @@
 #include <cassert>
-#include <array>
+#include <vector>
 #include <sstream>
 #include <iostream>
 
@@ -27,7 +27,7 @@ int main() {
 
     // Build the initial data
     constexpr double dx = L/static_cast<double>(NX);
-    array<double, NX> x, u, diag, rhs;
+    vector<double> x(NX), u(NX), diag(NX), rhs(NX);
 
     for (auto i = decltype(NX){0}; i < NX; ++i) {
         x[i] = i*dx;  // NOTE: only used for output
@@ -98,7 +98,7 @@ int main() {
     constexpr double r_uL        = r*UL;
 
     constexpr hsize_t tdims = NT/OUT_EVERY;  // NOTE: integer division
-    array<double, tdims> time;
+    vector<double> time(tdims);
 
     // n == 0 has been written to file already
     for (auto n = decltype(NT){1}; n < NT; ++n) {
