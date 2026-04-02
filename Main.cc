@@ -93,7 +93,7 @@ int main() {
     constexpr auto nxm2 = NX - 2;
 
     constexpr double r           = ALPHA*DT/(dx*dx);
-    constexpr double one_plus_2r = 1. + 2.*r;
+    constexpr double one_plus_2r = 1.0 + 2.0*r;
     constexpr double r_u0        = r*U0;
     constexpr double r_uL        = r*UL;
 
