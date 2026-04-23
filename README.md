@@ -1,11 +1,11 @@
 # Heat1D
-A code solving the 1D heat equation
+A suite of codes solving the heat equation
 $$
 \begin{equation*}
-    \frac{\partial u}{\partial t}\left(t, x\right) = \alpha\frac{\partial u}{\partial x^2}\left(t, x\right)\;,
+    \frac{\partial u}{\partial t}\left(t, x\right) = \alpha\nabla^2 u\left(t, x\right)\;,
 \end{equation*}
 $$
-where $\alpha > 0$, with Dirichlet boundary conditions
+where $\alpha > 0$, in one or two dimensions with Dirichlet boundary conditions
 $$
 \begin{align*}
     u\left(t, 0\right) &= u_0\\
@@ -29,6 +29,6 @@ by implicit time integration (backward Euler).
    ```
 3. Run:
    ```
-   ./install/bin/Heat1D_exe
+   ./install/bin/<executable>
    ```
-4. To plot evolution snapshots and make movies, see `Utils/README.md`
+4. To plot evolution snapshots and make movies, see `Utils/README.md` within each subdirectory
