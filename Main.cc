@@ -64,8 +64,8 @@ int main() {
     assert(H5Sclose(space_one_id) >= 0);
 
 
-    // ***** Position *****
-    const auto x_dset_id = H5Dcreate(file_id, "Position",  H5T_NATIVE_DOUBLE, fspace_id,
+    // ***** x coordinate *****
+    const auto x_dset_id = H5Dcreate(file_id, "x",  H5T_NATIVE_DOUBLE, fspace_id,
                                      H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
     assert(x_dset_id >= 0);
     assert(H5Dwrite(x_dset_id, H5T_NATIVE_DOUBLE, fspace_id, fspace_id, H5P_DEFAULT, x.data()) >= 0);
